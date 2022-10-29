@@ -15,6 +15,7 @@ class Game(Base):
     class Meta:
         verbose_name = 'Game'
         verbose_name_plural = 'Games'
+        ordering = ['id']
 
     def __str__(self):
         return self.title
@@ -31,6 +32,7 @@ class Evaluation(Base):
         verbose_name = 'Evaluation'
         verbose_name_plural = 'Evaluations'
         unique_together = ['email', 'game']
+        ordering = ['id']
 
     def __str__(self):
         return f'{self.name} evaluated the game {self.game} with the grade {self.grade}'

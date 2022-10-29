@@ -22,6 +22,7 @@ class EvaluationSerializer(serializers.ModelSerializer):
         )
 
 class GameSerializer(serializers.ModelSerializer):
+    evaluations = serializers.HyperlinkedRelatedField(many=True, read_only=True,view_name='evaluation-detail')
 
     class Meta:
         model = Game
@@ -30,5 +31,6 @@ class GameSerializer(serializers.ModelSerializer):
             'title',
             'url',
             'publish',
-            'active'
+            'active',
+            'evaluations'
         )

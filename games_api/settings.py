@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
 
+    'drf_spectacular',
+
     'games',
 ]
 
@@ -145,9 +147,19 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_THROTTLE_RATE':{
         'anon': '10/second',
-        'user': '50/second'
+        'user': '50/second' #tentei emitar o uso de Redis mesmo não sendo performatico usar o cache
     },
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 3
+    'PAGE_SIZE': 3,
+
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Games API',
+    'DESCRIPTION': 'Study using DRF to build a simple API',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }

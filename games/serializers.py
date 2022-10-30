@@ -21,6 +21,11 @@ class EvaluationSerializer(serializers.ModelSerializer):
             'active'
         )
 
+    def validate_grade(self, value):
+        if value in range(1, 11):
+            return value
+        raise serializers.ValidationError('The grade must be between 1 and 10.')
+
 class GameSerializer(serializers.ModelSerializer):
     evaluations = serializers.HyperlinkedRelatedField(many=True, read_only=True,view_name='evaluation-detail')
 

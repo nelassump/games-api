@@ -1,14 +1,8 @@
 from django.urls import path
-
 from rest_framework.routers import SimpleRouter
 
-from .views import (
-    GameAPIView, 
-    GamesAPIView, 
-    EvaluationAPIView, 
-    EvaluationsAPIView, 
-    GameViewsSet, 
-    EvaluationViewSet)
+from .views import (EvaluationAPIView, EvaluationsAPIView, EvaluationViewSet,
+                    GameAPIView, GamesAPIView, GameViewsSet)
 
 """
 API V1

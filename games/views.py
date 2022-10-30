@@ -1,12 +1,10 @@
-from rest_framework import generics
-from rest_framework.generics import get_object_or_404
-from rest_framework import viewsets
+from rest_framework import generics, viewsets
 from rest_framework.decorators import action
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from .models import Game, Evaluation
-from .serializers import GameSerializer, EvaluationSerializer
-
+from .models import Evaluation, Game
+from .serializers import EvaluationSerializer, GameSerializer
 
 """ 
 V1

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Game, Evaluation
+from .models import Evaluation, Game
 
 
 class EvaluationSerializer(serializers.ModelSerializer):

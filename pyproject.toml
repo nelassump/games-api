@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "poetry add django, django-filters, djangorestframework, pytest, requests, drf-spectacular, isort"
+version = "0.1.0"
+description = ""
+authors = ["Nelson Assumpcao <nelsonassumpcaogoncalvesdesa@gmail.com>"]
+readme = "README.md"
+packages = [{include = "poetry add django, django_filters, djangorestframework, pytest, requests, drf_spectacular, isort"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

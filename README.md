@@ -86,7 +86,9 @@ Após a execução a mesma estará rodando em: http://localhost:8000/
 | `evaluation_id`      | `int` | **Required**. Id of evaluation_id to fetch |
 
 
-
+## A ser feito
+- Implementar documentação automática
+- Implementar conexão a algum banco relacional com Docker.
 
 ## Authors
 

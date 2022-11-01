@@ -1,5 +1,6 @@
-import requests
 import pytest
+import requests
+
 
 class TestEvaluationsRequests:
     url_base_evaluations = 'http://127.0.0.1:8000/api/v2/evaluations/'
@@ -8,12 +9,12 @@ class TestEvaluationsRequests:
     def test_get_evaluations(self):
         response = requests.get(url=self.url_base_evaluations, headers=self.headers)
 
-        assert response.status_code==200
+        assert response.status_code == 200
 
     def test_get_evaluation(self):
         response = requests.get(url=f'{self.url_base_evaluations}2/', headers=self.headers)
 
-        assert response.status_code==200
+        assert response.status_code == 200
 
     @pytest.fixture(name="message")
     def test_post_evaluation(self):

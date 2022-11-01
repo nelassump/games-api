@@ -1,5 +1,5 @@
-import requests
 import pytest
+import requests
 
 
 class TestGamesRequests:
@@ -9,7 +9,7 @@ class TestGamesRequests:
     def test_get_games(self):
         response = requests.get(url=self.url_base_games, headers=self.headers)
 
-        assert response.status_code==200
+        assert response.status_code == 200
 
     def test_get_game(self):
         response = requests.get(url=f'{self.url_base_games}3/', headers=self.headers)
@@ -40,6 +40,6 @@ class TestGamesRequests:
         }
         response = requests.put(url=f'{self.url_base_games}3/', headers=self.headers, data=update)
 
-        assert response.status_code==200
+        assert response.status_code == 200
         assert response.json()['url'] == update['url']    
     

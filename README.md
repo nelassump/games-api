@@ -27,6 +27,19 @@ No terminal executar os comandos:
 
 Após a execução a mesma estará rodando em: http://localhost:8000/
 
+Para gerar um token é necessário acessar http://localhost:8000/admin com as credenciais:
+```bash
+user: admin
+password: admin
+```
+
+Ou por padrão utilizar este:
+```bash
+4e8c65b8d9ef369c5337c0ee66c369a8dab6a278
+```
+
+Como pensei que esse processo seria feito em outra camada de aplicação deixei este modelo simples para testar recursos.
+
 
 ## API Reference
 
@@ -85,9 +98,15 @@ Após a execução a mesma estará rodando em: http://localhost:8000/
 | :-------- | :------- | :-------------------------------- |
 | `evaluation_id`      | `int` | **Required**. Id of evaluation_id to fetch |
 
+#### Recursos  POST,PUT, DELETE 
+- É necessário estar logado via HTML ou utilizar Token de authorização.
+
+### Throttling
+- Foi implementado um limite de throttle rate de 10 requisições por segundo para usuários não autenticados e de 50 por segundo para usuários autenticados, somente para fins de imitar o uso de um Redis.
+
 
 ## A ser feito
-- Implementar documentação automática
+- Implementar documentação automática.
 - Implementar conexão a algum banco relacional com Docker.
 
 ## Authors

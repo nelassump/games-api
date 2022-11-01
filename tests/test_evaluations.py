@@ -1,5 +1,6 @@
-import requests
 import pytest
+import requests
+
 
 class TestEvaluationsRequests:
     url_base_evaluations = 'http://127.0.0.1:8000/api/v2/evaluations/'
